@@ -1,0 +1,28 @@
+﻿<Application x:Class="Vue.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Vue"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush Color="#2D3239" x:Key="menuBackgroundColor"/>
+            <SolidColorBrush Color="#1B1E22" x:Key="darkBackground"/>
+            <Style TargetType="TextBlock" x:Key="whiteText">
+                <Setter Property="Foreground" Value="White"/>
+            </Style>
+
+           
+        </ResourceDictionary>
+
+           
+
+    </Application.Resources>
+</Application>
