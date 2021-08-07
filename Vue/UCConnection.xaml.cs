@@ -41,7 +41,9 @@ namespace Vue
             {
                 Manager.ConnectedUser = u;
                 Manager.IsUserConnected = true;
+                Manager.GetFavouritesGames();
                 Navigation.NavigateToNewUC("UCHome");
+
             }
         }
 

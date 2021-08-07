@@ -47,16 +47,22 @@ namespace Vue
             {
                 return;
             }
-            Manager.FavouriteGames.Add(Manager.SelectedGame);
-
+            //Manager.FavouriteGames.Add(Manager.SelectedGame);
+            Manager.AddGameToFavourite();
             
+           
+
+
         }
 
         private void Delete_Favourite_Click(object sender, RoutedEventArgs e)
         {
             if (Manager.FavouriteGames.Contains(Manager.SelectedGame))
             {
-                Manager.FavouriteGames.Remove(Manager.SelectedGame);
+                //Manager.FavouriteGames.Remove(Manager.SelectedGame); this worked but didn't impact the user's hashSet
+                Manager.RemoveGameToFavourite(); //this method does impact the users hashSet
+                
+               
             }   
         }
     }

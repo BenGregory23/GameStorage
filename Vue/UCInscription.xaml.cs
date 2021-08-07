@@ -32,6 +32,7 @@ namespace Vue
         {
             Manager.CreateNewUser(Name_Box.Text, Login_box.Text, Password_box.Text);
             Manager.IsUserConnected = true;
+            Manager.GetFavouritesGames();
             Navigation.NavigateToNewUC("UCHome");          
         }
     }

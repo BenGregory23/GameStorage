@@ -48,7 +48,7 @@ namespace Modele
         /// </summary>
         public static IEnumerable<Game> DisplayedGames { get; set; }
 
-        public static List<Game> FavouriteGames { get; set; } = new List<Game>();
+        public static HashSet<Game> FavouriteGames { get; set; }
 
 
         /// <summary>
@@ -97,6 +97,12 @@ namespace Modele
 
         }
 
+        public void GetFavouritesGames()
+        {
+            if (IsUserConnected == false) return;
+            FavouriteGames = ConnectedUser.FavouriteGames;
+        }
+
         /// <summary>
         /// Méthode servant à évaluer si le chargement des données à bien été fait 
         /// </summary>
@@ -121,7 +127,11 @@ namespace Modele
         public void CreateNewUser(string name, string login, string password)
         {
             if (users.Contains(new User(name, login, password))) return;
-            users.Add(new User(name, login, password));
+            User u = new User(name, login, password);
+            users.Add(u);
+            ConnectedUser = u;
+
+
         }
         
         public void SearchGame(string input, string uc)
@@ -129,9 +139,18 @@ namespace Modele
             Search s = new Search();
             if (uc.Equals("UCHome")) s.SearhByName(input);
             else if (uc.Equals("UCFavourites")) s.SearhByNameFavourites(input);
-
-
-
         }
+
+        public void AddGameToFavourite()
+        {
+            ConnectedUser.AddFavourite(SelectedGame);
+        }
+
+        public void RemoveGameToFavourite()
+        {
+            ConnectedUser.RemoveFavourite(SelectedGame);
+        }
+
+
     }
 }

@@ -26,6 +26,7 @@ namespace StubPers
             List<User> Users = new List<User>();
 
             Users.Add(new User("Ben GREGORY", "benchoco", "banana"));
+            Users.Add(new User("Test HashSet", "test", "test", new Game("wow", "20/06/2020", "Survival", "Ben", "./image/GamesCover/Valorant.png")));
 
             return Users;
         }

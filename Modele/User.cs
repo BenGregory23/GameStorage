@@ -12,11 +12,20 @@ namespace Modele
 
         private string Password { get; set; }
 
+        public HashSet<Game> FavouriteGames { get; private set; }
+
         public User(string name, string login, string password)
         {
             Name = name;
             Login = login;
             Password = password;
+            FavouriteGames = new HashSet<Game>();
+        }
+
+        public User(string name, string login, string password,  Game g)
+            :this( name,  login,  password)
+        {
+            AddFavourite(g);
         }
 
         public override string ToString()
@@ -32,5 +41,16 @@ namespace Modele
             }
             else return false;
         }
+
+        public void AddFavourite(Game g)
+        {
+            FavouriteGames.Add(g);
+        }
+
+        public void RemoveFavourite(Game g)
+        {
+            FavouriteGames.Remove(g);
+        }
+
     }
 }
