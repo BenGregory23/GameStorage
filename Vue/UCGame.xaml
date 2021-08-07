@@ -10,50 +10,50 @@
              Height="210"
              Width="160">
 
-    <Border BorderBrush="{StaticResource menuBackgroundColor}"
-            Background="{StaticResource menuBackgroundColor}"
-            BorderThickness="1"
-            CornerRadius="5" 
-            HorizontalAlignment="Center"
-            Width="125">
+    
 
-        <Grid>
+        
 
-            <Grid.RowDefinitions>
+            
 
-                <RowDefinition Height="0.25*"/>
-                <RowDefinition/>
-                <RowDefinition Height="0.17*"/>
-            </Grid.RowDefinitions>
+    <Grid>
+        <Border Canvas.Left="55"
+            Canvas.Top="30"
+            Width="100"
+            Height="Auto"
+            Margin="12,12,8,0"
+            VerticalAlignment="Top"
+            BorderBrush="transparent"
+            BorderThickness=".5"
+            CornerRadius="18">
+            
+            <Border Name="ReceiverColor"
+                BorderBrush="transparent"
+                BorderThickness="0"
+                CornerRadius="15">
+                <Grid>
+                    <Border Name="Mask"
+                        Background="{StaticResource menuBackgroundColor}"
+                        
+                        BorderThickness="0"
+                        CornerRadius="5">
+                    </Border>
+                    <StackPanel>
+                        <Image Name="Receiver"
+                           Source="./image/GamesCover/valorant.jpg" />
+                        <StackPanel.OpacityMask>
+                            <VisualBrush Visual="{Binding ElementName=Mask}" />
+                        </StackPanel.OpacityMask>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Border>
+    </Grid>
 
 
 
-            <Image Source="./image/GamesCover/valorant.jpg" Width="121" Height="200" Grid.ColumnSpan="3" Stretch="Fill" Grid.RowSpan="2" />
 
 
 
-            <TextBlock Text="Valorant"
-                   Grid.Row="2"
-                       Grid.Column="1"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Foreground="White"
-                   FontWeight="DemiBold"
-                   Margin="0,0,0,0"/>
-
-            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
-                    ToolTip="MaterialDesignFloatingActionMiniDarkButton"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                    HorizontalAlignment="Right"
-                    Height="20"
-                    Width="20"
-                    Background="{StaticResource darkBackground}"
-                    BorderBrush="Transparent"
-                    Margin="0,-7,-9,24">
-                <materialDesign:PackIcon Kind="Heart" Height="10" Width="10"/>
-            </Button>
-
-        </Grid>
-    </Border>
 
 </UserControl>
