@@ -116,7 +116,8 @@ namespace Vue
 
                 string[] uc = Navigation.MainPart.Content.ToString().Split(".");
 
-                if (uc[1].Equals("UCHome")){
+                if (uc[1].Equals("UCHome"))
+                {
                     Manager.SearchGame(searchBox.Text.ToLower(), uc[1]);
                     Navigation.NavigateToNewUC("UCHome");
                 }
@@ -124,6 +125,11 @@ namespace Vue
                 {
                     Manager.SearchGame(searchBox.Text.ToLower(), uc[1]);
                     Navigation.NavigateToNewUC("UCFavourites");
+                }
+                else
+                {
+                    Manager.SearchGame(searchBox.Text.ToLower(), "UCHome");
+                    Navigation.NavigateToNewUC("UCHome");
                 }
                 
                 Debug.WriteLine(uc.ToString());

@@ -43,7 +43,7 @@
 
 
 
-                    <Border BorderBrush="{StaticResource menuBackgroundColor}"
+                    <!--<Border BorderBrush="{StaticResource menuBackgroundColor}"
                             Background="{StaticResource menuBackgroundColor}"
                             BorderThickness="1"
                             CornerRadius="5" 
@@ -83,6 +83,37 @@
                         </Grid>
                         
                         
+                    </Border>-->
+
+                    <Border 
+                                Width="130"
+                                Height="195"
+                                Margin="0"
+                                Padding="0"
+                                BorderBrush="transparent"
+                                CornerRadius="18">
+
+                        <Border Name="ReceiverColor"
+                                    BorderBrush="transparent"
+                                    BorderThickness="0"
+                                    CornerRadius="15">
+                            <Grid>
+                                <Border Name="Mask"
+                                            Background="{StaticResource menuBackgroundColor}"
+                                            BorderThickness="0"
+                                            CornerRadius="5">
+                                </Border>
+                                <StackPanel>
+                                    <Image Name="Receiver"
+                                               Source="{Binding CoverImage}"
+                                               Stretch="Fill"
+                                               Height="195"/>
+                                    <StackPanel.OpacityMask>
+                                        <VisualBrush Visual="{Binding ElementName=Mask}" />
+                                    </StackPanel.OpacityMask>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
                     </Border>
 
 
