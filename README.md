@@ -1,4 +1,4 @@
-# GameStorage
+# Game Stocker
 
 ## Introduction
 
