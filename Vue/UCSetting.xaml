@@ -95,6 +95,7 @@
                 
             </Border>
 
+            
 
             <Border Grid.Row="1" Grid.Column="2" 
                     BorderBrush="{StaticResource menuBackgroundColor}"

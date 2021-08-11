@@ -145,7 +145,8 @@ namespace Vue
         private void accept_button(object sender, RoutedEventArgs e)
         {
             if(Manager.Games.Contains(new Game(GameTextBox.Text, DateTextBox.Text, TypeTextBox.Text, PublisherTextBox.Text, DescriptionTextBox.Text)) == false){
-                Manager.games.Add(new Game(GameTextBox.Text, DateTextBox.Text, TypeTextBox.Text, PublisherTextBox.Text, DescriptionTextBox.Text));
+                Manager.AddGame(new Game(GameTextBox.Text, DateTextBox.Text, TypeTextBox.Text, PublisherTextBox.Text, DescriptionTextBox.Text));
+                Manager.LoadData();
                 Manager.DisplayedGames = Manager.games;
                 Navigation.NavigateToNewUC("UCHome");
             }

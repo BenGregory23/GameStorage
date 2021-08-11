@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Modele;
 using StubPers;
+using Database;
 
 namespace Vue
 {
@@ -15,7 +16,7 @@ namespace Vue
     /// </summary>
     public partial class App : Application
     {
-        public Manager LeManager { get; private set; } = new Manager(new Stub());
+        public Manager LeManager { get; private set; } = new Manager(new PersBDD());
 
         internal Navigation Navigation { get; set; }
         public App()

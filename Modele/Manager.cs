@@ -92,7 +92,7 @@ namespace Modele
             }
 
             
-            SelectedGame = games[0];
+            
             DisplayedGames = games.OrderBy(g => g.Name);
 
         }
@@ -128,7 +128,8 @@ namespace Modele
         {
             if (users.Contains(new User(name, login, password))) return;
             User u = new User(name, login, password);
-            users.Add(u);
+            AddUser(u);
+            //users.Add(u);
             ConnectedUser = u;
 
 
@@ -149,6 +150,38 @@ namespace Modele
         public void RemoveGameToFavourite()
         {
             ConnectedUser.RemoveFavourite(SelectedGame);
+        }
+
+        /// <summary>
+        /// Method used to add a game to the database
+        /// </summary>
+        /// <param name="g">game to insert into database</param>
+        /// <returns></returns>
+        public bool AddGame(Game g)
+        {
+            foreach(Game game in games)
+            {
+                if (game.Equals(g)) return false;
+            }
+            Persistance.SaveGame(g);
+            LoadData();
+            return true;
+        }
+
+        /// <summary>
+        /// Method used to add a user to the database
+        /// </summary>
+        /// <param name="u">user to insert into database</param>
+        /// <returns></returns>
+        public bool AddUser(User u)
+        {
+            foreach (User user in users)
+            {
+                if (user.Equals(u)) return false;
+            }
+            Persistance.SaveUser(u);
+            LoadData();
+            return true;
         }
 
 

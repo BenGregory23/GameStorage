@@ -5,6 +5,10 @@ namespace Modele
 {
     public class Game
     {
+        public int Id { get; private set; }
+
+        public static int LastId { get; private set; }
+
         public string Name { get; private set; }
 
         public string DateOfRelease { get; private set; }
@@ -20,6 +24,8 @@ namespace Modele
 
         public string CoverImage { get; private set; }
 
+        public bool IsTrailer { get; set; }
+
         /// <summary>
         /// Trailer of the game, its given under a normal youtube link and it's modified to be like a youtube embed video
         /// </summary>
@@ -32,13 +38,19 @@ namespace Modele
 
             private set
             {
-                string[] linkParts = value.Split("=");
-                trailer = "https://www.youtube.com/embed/" + linkParts[1];
+                if(IsTrailer == true)
+                {
+                    string[] linkParts = value.Split("=");
+                    trailer = "https://www.youtube.com/embed/" + linkParts[1];
+                }
+                
             }
         }
         private string trailer;
 
         public string Description { get; private set; }
+
+        public double Grade { get; private set; }
 
         public Game(string name, string dateOfRelease, string type, string publisher, string coverImage)
         {
@@ -48,6 +60,10 @@ namespace Modele
             Publisher = publisher;
             CoverImage = coverImage;
             Description = "This description will be available soon!";
+            LastId++;
+            Id = LastId;
+            IsTrailer = false;
+            Trailer = " ";
         }
 
         public Game(string name, string dateOfRelease, string type, string publisher, string coverImage, string description)
@@ -61,6 +77,7 @@ namespace Modele
         {
             Description = description;
             Trailer = trailer;
+            IsTrailer = true;
         }
 
         

@@ -6,11 +6,15 @@ namespace Modele
 {
     public class User
     {
+        public int Id { get; private set; }
+
+        public static int LastId { get; private set; }
+
         public string Name { get; private set; }
 
         public string Login { get; private set; }
 
-        private string Password { get; set; }
+        public string Password { get;  private set; }
 
         public HashSet<Game> FavouriteGames { get; private set; }
 
@@ -20,6 +24,10 @@ namespace Modele
             Login = login;
             Password = password;
             FavouriteGames = new HashSet<Game>();
+            LastId++;
+            Id = LastId;
+            
+            
         }
 
         public User(string name, string login, string password,  Game g)
@@ -30,7 +38,7 @@ namespace Modele
 
         public override string ToString()
         {
-            return $"{Name}\t{Login}\t {Password}\n";
+            return $" {Id} {Name}\t{Login}\t {Password}\n";
         }
 
         public bool checkPassword(string password)

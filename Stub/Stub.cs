@@ -39,5 +39,14 @@ namespace StubPers
             return (Games, Users);
         }
 
+        public void SaveGame(Game g)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveUser(User u)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

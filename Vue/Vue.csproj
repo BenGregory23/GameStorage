@@ -80,10 +80,12 @@
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.7" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.864.35" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Modele\Modele.csproj" />
+    <ProjectReference Include="..\PersBDD\PersBDD.csproj" />
     <ProjectReference Include="..\Stub\Stub.csproj" />
     <ProjectReference Include="..\Test\Test.csproj" />
   </ItemGroup>

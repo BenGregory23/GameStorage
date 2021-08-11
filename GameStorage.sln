@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vue", "Vue\Vue.csproj", "{068445C3-98DF-4234-B199-CDE642CD2928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modele", "Modele\Modele.csproj", "{9474BC9C-AF34-4F0D-B02D-3B717B3E099B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modele", "Modele\Modele.csproj", "{9474BC9C-AF34-4F0D-B02D-3B717B3E099B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{37071D53-BF5F-4EB1-B7A9-3E926EB37713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{37071D53-BF5F-4EB1-B7A9-3E926EB37713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stub", "Stub\Stub.csproj", "{426479B3-8EE4-4AD6-AF57-D3C366D2ACA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stub", "Stub\Stub.csproj", "{426479B3-8EE4-4AD6-AF57-D3C366D2ACA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersBDD", "PersBDD\PersBDD.csproj", "{6CB5B1E3-732C-4AB8-9CB2-F17DF43438DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{426479B3-8EE4-4AD6-AF57-D3C366D2ACA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{426479B3-8EE4-4AD6-AF57-D3C366D2ACA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{426479B3-8EE4-4AD6-AF57-D3C366D2ACA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB5B1E3-732C-4AB8-9CB2-F17DF43438DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB5B1E3-732C-4AB8-9CB2-F17DF43438DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB5B1E3-732C-4AB8-9CB2-F17DF43438DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB5B1E3-732C-4AB8-9CB2-F17DF43438DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

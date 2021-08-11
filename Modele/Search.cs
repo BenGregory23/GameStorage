@@ -20,7 +20,7 @@ namespace Modele
         public void SearhByNameFavourites(string input)
         {
             Manager.DisplayedGames = Manager.FavouriteGames.Where(g => g.Name.ToLower().Contains(input));
-
         }
+
     }
 }
