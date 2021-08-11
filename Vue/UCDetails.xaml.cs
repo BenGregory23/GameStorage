@@ -23,6 +23,7 @@ namespace Vue
         public Manager Manager => (App.Current as App).LeManager;
 
         internal Navigation Navigation => (App.Current as App).Navigation;
+
         public UCDetails()
         {
             InitializeComponent();

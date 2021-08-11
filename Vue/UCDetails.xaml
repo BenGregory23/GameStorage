@@ -71,7 +71,7 @@
                            FontWeight="Light"
                            VerticalAlignment="Bottom"
                            Margin="0,20,0,-2"/>
-                <TextBlock Text="{Binding Type}"
+                <TextBlock Text="{Binding DisplayableGenres}"
                            Style="{StaticResource whiteText}"
                            FontSize="14"
                            VerticalAlignment="Top"/>

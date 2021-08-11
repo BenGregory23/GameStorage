@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace Modele
 {
     public class Game
     {
         public int Id { get; private set; }
-
-        public static int LastId { get; private set; }
 
         public string Name { get; private set; }
 
@@ -18,6 +18,17 @@ namespace Modele
         /// Propriété donnant le type du jeu (fps, action, online, co-op, indé etc...)
         /// </summary>
         public List<EnumType> Genres { get; private set; }
+
+        public string DisplayableGenres
+        {
+            get
+            {
+                return Genres.ToString();
+            }
+
+            set => displayableGenres = value;
+        }
+        private string displayableGenres;
 
         public string Publisher { get; private set; }
 
@@ -45,8 +56,10 @@ namespace Modele
             Publisher = publisher;
             CoverImage = coverImage;
             Description = "This description will be available soon!";
-            LastId++;
-            Id = LastId;
+
+            
+            Id = Manager.games.Last().Id++;
+
             IsTrailer = false;
             
         }
@@ -71,6 +84,19 @@ namespace Modele
         public override string ToString()
         {
             return $"{Name}\t {DateOfRelease} \t {Genres} \t {Publisher}\t {Trailer}\n";
+        }
+
+        public string DisplayGenres()
+        {
+            string s = " ";
+
+            foreach(EnumType e in Genres)
+            {
+                s += $"{e}-";
+                Debug.WriteLine(e);
+            }
+
+            return s;
         }
 
 

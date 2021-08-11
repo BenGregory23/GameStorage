@@ -55,9 +55,6 @@ namespace Modele
         /// Dépendance vers le gestionnaire de persistance
         /// </summary>
         public IPersistanceManager Persistance { get; private set; }
-
-        ///ZONE CONCERNANT LES UTILISATEURS
-
         
 
        public Manager(IPersistanceManager persistance)
