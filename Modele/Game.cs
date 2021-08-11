@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Modele
@@ -16,7 +17,7 @@ namespace Modele
         /// <summary>
         /// Propriété donnant le type du jeu (fps, action, online, co-op, indé etc...)
         /// </summary>
-        public string Type { get; private set; }
+        public List<EnumType> Genres { get; private set; }
 
         public string Publisher { get; private set; }
 
@@ -29,61 +30,47 @@ namespace Modele
         /// <summary>
         /// Trailer of the game, its given under a normal youtube link and it's modified to be like a youtube embed video
         /// </summary>
-        public string Trailer
-        {
-            get
-            {
-                return trailer;
-            }
-
-            private set
-            {
-                if(IsTrailer == true)
-                {
-                    string[] linkParts = value.Split("=");
-                    trailer = "https://www.youtube.com/embed/" + linkParts[1];
-                }
-                
-            }
-        }
-        private string trailer;
+        public string Trailer { get; set; }
+   
 
         public string Description { get; private set; }
 
         public double Grade { get; private set; }
 
-        public Game(string name, string dateOfRelease, string type, string publisher, string coverImage)
+        public Game(string name, string dateOfRelease, List<EnumType> genres, string publisher, string coverImage)
         {
             Name = name;
             DateOfRelease = dateOfRelease;
-            Type = type;
+            Genres = new List<EnumType>();
             Publisher = publisher;
             CoverImage = coverImage;
             Description = "This description will be available soon!";
             LastId++;
             Id = LastId;
             IsTrailer = false;
-            Trailer = " ";
+            
         }
 
-        public Game(string name, string dateOfRelease, string type, string publisher, string coverImage, string description)
-            : this(name, dateOfRelease, type, publisher, coverImage)
+        public Game(string name, string dateOfRelease, List<EnumType> genres, string publisher, string coverImage, string description)
+            : this(name, dateOfRelease, genres, publisher, coverImage)
         {
             Description = description;
         }
 
-        public Game(string name, string dateOfRelease, string type, string publisher, string coverImage, string description, string trailer)
-            : this(name, dateOfRelease, type, publisher, coverImage)
+        public Game(string name, string dateOfRelease, List<EnumType> genres, string publisher, string coverImage, string description, string trailer)
+            : this(name, dateOfRelease, genres, publisher, coverImage)
         {
             Description = description;
-            Trailer = trailer;
             IsTrailer = true;
+            string[] linkParts = trailer.Split("v=");
+            Trailer = "https://www.youtube.com/embed/" + linkParts[1];
+
         }
 
         
         public override string ToString()
         {
-            return $"{Name}\t {DateOfRelease} \t {Type} \t {Publisher}\t {Trailer}\n";
+            return $"{Name}\t {DateOfRelease} \t {Genres} \t {Publisher}\t {Trailer}\n";
         }
 
 

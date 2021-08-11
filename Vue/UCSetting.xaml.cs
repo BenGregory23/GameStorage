@@ -42,5 +42,10 @@ namespace Vue
             Manager.IsUserConnected = false;
             Navigation.NavigateToNewUC("UCSettings");
         }
+
+        private void AddGame_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NavigateToNewUC("UCCreateGame");
+        }
     }
 }

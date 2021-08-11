@@ -42,6 +42,9 @@ namespace Vue
                 case "UCSettings":
                     MainPart.Content = new UCSetting();
                     break;
+                case "UCCreateGame":
+                    MainPart.Content = new UCCreateGame();
+                    break;
             }
         }
 

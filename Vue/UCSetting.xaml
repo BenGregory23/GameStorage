@@ -90,12 +90,15 @@
                             Name="logout_button"
                              Cursor="Hand" />
                     </StackPanel>
+
+
                     
                 </Grid>
                 
             </Border>
 
-            
+            <Button Content="Add game" Click="AddGame_Click" Grid.Column="1" Width="150"/>
+
 
             <Border Grid.Row="1" Grid.Column="2" 
                     BorderBrush="{StaticResource menuBackgroundColor}"

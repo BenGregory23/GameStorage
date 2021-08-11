@@ -21,6 +21,7 @@ namespace Vue
     public partial class UCDetails : UserControl
     {
         public Manager Manager => (App.Current as App).LeManager;
+
         internal Navigation Navigation => (App.Current as App).Navigation;
         public UCDetails()
         {
