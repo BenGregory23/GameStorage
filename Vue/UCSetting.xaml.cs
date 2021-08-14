@@ -26,26 +26,6 @@ namespace Vue
         {
             InitializeComponent();
             DataContext = Manager;
-            login_button.IsEnabled = !Manager.IsUserConnected;
-            
-        }
-
-        private void login_Click(object sender, RoutedEventArgs e)
-        {
-            
-            Navigation.NavigateToNewUC("UCConnection");
-        }
-
-        private void logout_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.ConnectedUser = null;
-            Manager.IsUserConnected = false;
-            Navigation.NavigateToNewUC("UCSettings");
-        }
-
-        private void AddGame_Click(object sender, RoutedEventArgs e)
-        {
-            Navigation.NavigateToNewUC("UCCreateGame");
         }
     }
 }

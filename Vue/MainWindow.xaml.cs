@@ -30,19 +30,11 @@ namespace Vue
         public MainWindow()
         {
             InitializeComponent();
-            if(Manager.IsUserConnected == false)
-            {
-                logout_button.Visibility = Visibility.Collapsed;
-            }
-            if(Manager.IsUserConnected == true)
-            {
-                logout_button.Visibility = Visibility.Visible;
-            }
-            
         }
 
         private void click_favourite(object sender, RoutedEventArgs e)
         {
+            
             contentControlHome.Content = new UCFavourites();
             Manager.DisplayedGames = Manager.FavouriteGames;
         }
@@ -142,6 +134,13 @@ namespace Vue
         private void addGame_Click(object sender, RoutedEventArgs e)
         {
             Navigation.NavigateToNewUC("UCCreateGame");
+            
+            
+        }
+
+        private void connect_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NavigateToNewUC("UCLog-in-out");
         }
     }
 }

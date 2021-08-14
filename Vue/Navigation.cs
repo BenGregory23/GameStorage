@@ -45,6 +45,9 @@ namespace Vue
                 case "UCCreateGame":
                     MainPart.Content = new UCCreateGame();
                     break;
+                case "UCLog-in-out":
+                    MainPart.Content = new UCLog_in_out();
+                    break;
             }
         }
 

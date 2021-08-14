@@ -145,8 +145,8 @@
 
 
                 <StackPanel Orientation="Horizontal">
-                    
-                        
+
+
 
                     <Button Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                             HorizontalAlignment="Left"
@@ -156,70 +156,21 @@
                             BorderBrush="Transparent"
                             Margin="15,0,0,0" Cursor="Hand"
                             Click="addGame_Click">
-                            <materialDesign:PackIcon Kind="Plus" />
+                        <materialDesign:PackIcon Kind="Plus" />
 
                     </Button>
-                    
 
-
-
-                    <materialDesign:DialogHost>
-                        <materialDesign:DialogHost.DialogContent>
-                            <!-- put your dialog content here-->
-                            <StackPanel Margin="16">
-                                <StackPanel Orientation="Horizontal"
-                                            HorizontalAlignment="Right">
-                                    <Button Style="{StaticResource MaterialDesignFlatButton}"
-                                            x:Name="Log_button"
-                                            IsDefault="True"
-                                            Margin="0 8 8 0"
-                                            Content="Log in"
-                                            Click="click_log_in"
-                                            Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
-                                        <Button.CommandParameter>
-                                            <system:Boolean xmlns:system="clr-namespace:System;assembly=mscorlib">True</system:Boolean>
-                                        </Button.CommandParameter>
-                                    </Button>
-                                    <Button Style="{StaticResource MaterialDesignFlatButton}"
-                                            x:Name="Sign_button"
-                                            IsCancel="True"
-                                            Margin="0 8 8 0"
-                                            Content="Create Account"
-                                            Click="click_sign_up"
-                                            Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
-                                        <Button.CommandParameter>
-                                            <system:Boolean xmlns:system="clr-namespace:System;assembly=mscorlib">False</system:Boolean>
-                                        </Button.CommandParameter>
-                                    </Button>
-
-                                    <Button Style="{StaticResource MaterialDesignFlatButton}"
-                                            x:Name="logout_button"
-                                            IsCancel="True"
-                                            Margin="0 8 8 0"
-                                            Content="Log out"
-                                            Click="click_log_out"
-                                            
-                                            Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
-                                        <Button.CommandParameter>
-                                            <system:Boolean xmlns:system="clr-namespace:System;assembly=mscorlib">False</system:Boolean>
-                                        </Button.CommandParameter>
-                                    </Button>
-                                </StackPanel>
-                            </StackPanel>
-                        </materialDesign:DialogHost.DialogContent>
-                        <!-- put the content over which the dialog is shown here (e.g. your main window grid)-->
-                        <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
-                            ToolTip="MaterialDesignFloatingActionMiniDarkButton"
-                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                    <Button Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                            HorizontalAlignment="Left"
                             Height="35"
                             Width="35"
-                            Margin="15,0,0,0"
                             Background="{StaticResource menuBackgroundColor}"
                             BorderBrush="Transparent"
-                            Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Cursor="Hand"    >
-                            <materialDesign:PackIcon Kind="Account" />
-                        </Button>
-                    </materialDesign:DialogHost>
+                            Margin="15,0,0,0" Cursor="Hand"
+                            Click="connect_Click">
+                        <materialDesign:PackIcon Kind="User" />
+
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">

@@ -13,14 +13,10 @@ namespace Modele
         ///// <returns> Une collection de bières et une collection d'utiisateurs </returns>
         (IEnumerable<Game> Games, IEnumerable<User> Users) LoadData();
 
-
         public void SaveGame(Game g);
-
         public void SaveUser(User u);
 
-
-
-
+        public void UpdateUser(User user, Game game);
 
     }
 }

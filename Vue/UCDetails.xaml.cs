@@ -49,12 +49,9 @@ namespace Vue
             {
                 return;
             }
-            //Manager.FavouriteGames.Add(Manager.SelectedGame);
-            Manager.AddGameToFavourite();
-            
            
-
-
+            Manager.AddGameToFavourite();
+            Manager.UpdateUser(Manager.ConnectedUser, Manager.SelectedGame);
         }
 
         private void Delete_Favourite_Click(object sender, RoutedEventArgs e)

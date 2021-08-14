@@ -48,5 +48,10 @@ namespace StubPers
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateUser(User user, Game game)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

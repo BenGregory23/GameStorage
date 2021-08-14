@@ -181,6 +181,11 @@ namespace Modele
             return true;
         }
 
+        public void UpdateUser(User u, Game g)
+        {
+            Persistance.UpdateUser(u, g);
+        }
+
 
     }
 }

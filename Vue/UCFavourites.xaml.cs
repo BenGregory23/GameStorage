@@ -30,6 +30,7 @@ namespace Vue
             if(Manager.IsUserConnected == false)
             {
                 Error_box.Text = "You have to log in to see your favourites games!";
+                Manager.FavouriteGames = null;
             }
         }
 

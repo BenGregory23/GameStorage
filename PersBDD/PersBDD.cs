@@ -4,6 +4,7 @@ using Modele;
 using MongoDB;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using System.Linq;
 
 namespace Database
 {
@@ -54,6 +55,17 @@ namespace Database
         {
             var collection = db.GetCollection<User>("Users");
             collection.InsertOne(u);
+        }
+
+
+        public void UpdateUser(User user, Game game)
+        {
+            var filter = Builders<User>.Filter.Eq("_id", user.Id);
+            var update = Builders<User>.Update.Set("FavouriteGames", user.FavouriteGames);
+
+            var collection = db.GetCollection<User>("Users");
+            var result = collection.UpdateOne(filter, update);
+
         }
     }
 }
