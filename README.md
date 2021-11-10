@@ -6,5 +6,8 @@
 
 ## Some Pics
 
-![image](https://user-images.githubusercontent.com/61834092/141145514-bf83b89c-5079-4698-a864-31535f6c550f.png)
+![image](https://user-images.githubusercontent.com/61834092/141145576-61ac3e3a-b347-407d-b9d8-e810da7de50c.png)
+
+
+![image](https://user-images.githubusercontent.com/61834092/141145626-834e4fa6-fe70-46fb-8ce5-5b45a3e556d9.png)
 
